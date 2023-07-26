@@ -1,0 +1,32 @@
+--Create a Bookshop database
+
+CREATE TABLE Books (id INTEGER PRIMARY KEY, Title TEXT, Author TEXT, Quantity INTEGER, Price REAL);
+
+INSERT INTO Books VALUES (01, "The End Of Eternity", "Isaac Asimov", 35, 9.12);
+INSERT INTO Books VALUES (02, "I, Robot", "Isaac Asimov", 7, 12.45);
+INSERT INTO Books VALUES (03, "Foundation", "Isaac Asimov", 33, 5.42);
+INSERT INTO Books VALUES (04, "La pregunta infinita sobre el conocimiento: ¿Sé?", "José Manuel Bastida Fernández", 11, 8.42);
+INSERT INTO Books VALUES (05, "The Alchemist", "H. P. Lovecraft", 15, 8.25);
+INSERT INTO Books VALUES (06, "Old Bugs", "H.P. Lovecraft", 25, 9.89);
+INSERT INTO Books VALUES (07, "The Color Out Of Space", "H.P Lovecraf", 56, 12.99);
+INSERT INTO Books VALUES (08, "Pet Sematary", "Stephen King", 78, 14.56);
+INSERT INTO Books VALUES (09, "The Prince", "Niccolò Machiavelli", 16, 5.58);
+INSERT INTO Books VALUES (10, "Data Analytics Made Accesible", "Anil Maheshwari", 25, 9.99);
+INSERT INTO Books VALUES (11, "Dream of the Red Chamber", "Cao Xuequin", 59, 35.99);
+INSERT INTO Books VALUES (12, "The Longevity Paradox", "Dr. Steven R Gundry MD", 45, 8.88);
+INSERT INTO Books VALUES (13, "Digital Marketing Strategy", "Simon Kingsnorth", 20, 10.52);
+INSERT INTO Books VALUES (14, "The Miracle Morning", "Hal Elrod", 25, 14.28);
+INSERT INTO Books VALUES (15, "Normal People", "Sally Rooney", 100, 11.24);
+
+--display the books ordered by price
+SELECT * from Books ORDER BY Price;
+
+--how many books are in the bookshop?
+SELECT SUM(Quantity) from Books;
+
+--Of which three books do we have more stock? 
+SELECT Title, Author, Quantity
+FROM Books
+order by Quantity desc
+limit 3; 
+
